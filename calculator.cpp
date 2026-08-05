@@ -10,15 +10,23 @@ using namespace std;
     }
     return 1;
 }
+int LCM(int a,int b){
+        for(int i=a;i<=a*b;i++){
+        if((i%a==0) && (i%b==0)){
+            return i;
+        }
+    }
+return 1;
+}
 int main(){
-    int p,q,a,m,s,r,g;
+    int p,q,a,m,s,r,g,l;
     float d;
     char op;
     cout<<"\n**********CALCULATOR**********";
     cout<<"\n\nEnter first and second number respectively: ";
     cin>>p>>q;
     fflush(stdin);
-    cout<<"\nEnter operator\n\nAddition (+)\nMultiplication (*)\nSubtraction (-)\nDivision (/)\nRemainder (f)\nGCD (g)\n";
+    cout<<"\nEnter operator\n\nAddition (+)\nMultiplication (*)\nSubtraction (-)\nDivision (/)\nRemainder (f)\nGCD (g)\nLCM (l)\n";
     cin>>op;
     
     a=p+q;
@@ -26,6 +34,7 @@ int main(){
     s=p-q;
     r=p%q;
     g=GCD(p,q);
+    l=LCM(p,q);
 
     if(op =='+')
         cout<<"Addition: "<<a;
@@ -39,6 +48,8 @@ int main(){
         cout<<"Remainder: "<<r;
     else if(op =='g')
         cout<<"GCD is "<<g;
+    else if(op =='l')
+        cout<<"LCM is "<<l;
     cout<<endl;
     return 0;
 }
