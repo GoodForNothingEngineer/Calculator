@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
- int GCD(int a,int b){
+long long int GCD(long long int a,long long int b){
         for(int i=a;i>=1;i--){
             for(int j=b;j>=1;j--){
                 if((a%i==0) && (b%j==0) && (i==j)){
@@ -10,7 +10,7 @@ using namespace std;
     }
     return 1;
 }
-int LCM(int a,int b){
+long long int LCM(long long int a,long long int b){
         for(int i=a;i<=a*b;i++){
         if((i%a==0) && (i%b==0)){
             return i;
@@ -19,15 +19,20 @@ int LCM(int a,int b){
 return 1;
 }
 int main(){
-    int p,q,a,m,s,r,g,l;
+    long long int p,q,a,m,s,r,g,l;
     float d;
     char op;
     cout<<"\n**********CALCULATOR**********";
-    cout<<"\n\nEnter first and second number respectively: ";
-    cin>>p>>q;
+    cout<<"\n\nEnter first and second number respectively: \a";
+    if(cin >> p >> q){
     fflush(stdin);
     cout<<"\nEnter operator\n\nAddition (+)\nMultiplication (*)\nSubtraction (-)\nDivision (/)\nRemainder (f)\nGCD (g)\nLCM (l)\n";
     cin>>op;
+    }
+    else{
+        cerr<<"Invalid Input";
+        return 1;
+    }
     
     a=p+q;
     m=p*q;
